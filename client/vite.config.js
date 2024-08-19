@@ -1,17 +1,29 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import VueDevTools from 'vite-plugin-vue-devtools'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import VueDevTools from "vite-plugin-vue-devtools";
+import AutoImport from 'unplugin-auto-import/vite'
+import Components from 'unplugin-vue-components/vite'
+import { ElementPlusResolver } from "unplugin-vue-components/resolvers";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [vue(),VueDevTools(),],
+  plugins: [
+    vue(),
+    VueDevTools(),
+    AutoImport({
+      resolvers: [ElementPlusResolver()],
+    }),
+    Components({
+      resolvers: [ElementPlusResolver()],
+    }),
+  ],
   server: {
     proxy: {
-      '/api': {
-        target: 'http://0.0.0.0:5000',
+      "/api": {
+        target: "http://0.0.0.0:5000",
       },
     },
-    host: '0.0.0.0',
-    port: 80
+    host: "0.0.0.0",
+    port: 8080,
   },
 });
