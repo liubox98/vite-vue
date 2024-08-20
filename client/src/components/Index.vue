@@ -1,5 +1,5 @@
 <template>
-  <div style="width: 80%; margin: 0 auto">
+  <div style="width: 88%; margin: 0 auto">
     <el-menu
       :default-active="activeIndex"
       mode="horizontal"
@@ -12,12 +12,12 @@
           alt="Element logo"
         />
       </el-menu-item>
-      <el-menu-item index="1">1.主力</el-menu-item>
-      <el-menu-item index="2">2.铺路</el-menu-item>
-      <el-menu-item index="3">3.碰瓷</el-menu-item>
-      <el-menu-item index="4">4.策略</el-menu-item>
-      <el-menu-item index="5">5.器械</el-menu-item>
-      <el-menu-item index="6">6.兑换</el-menu-item>
+      <el-menu-item index="1" style="font-size: 18px">🚩主力</el-menu-item>
+      <el-menu-item index="2" style="font-size: 18px">2.铺路</el-menu-item>
+      <el-menu-item index="3" style="font-size: 18px">3.碰瓷</el-menu-item>
+      <el-menu-item index="4" style="font-size: 18px">4.策略</el-menu-item>
+      <el-menu-item index="5" style="font-size: 18px">5.器械</el-menu-item>
+      <el-menu-item index="6" style="font-size: 18px">6.兑换</el-menu-item>
     </el-menu>
 
     <div v-show="activeIndex === '1'">
@@ -25,7 +25,6 @@
     </div>
     <div v-show="activeIndex === '2'">
       <p>铺路内容</p>
-      <main_force />
     </div>
     <div v-show="activeIndex === '3'">
       <p>碰瓷内容</p>

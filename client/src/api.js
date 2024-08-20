@@ -1,9 +1,13 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-    baseURL: '/api',
+  baseURL: "/api",
 });
 
 export const fetchData = () => {
-    return api.get('/data');
+  return api.get("/data");
+};
+
+export const postDate = (data) => {
+  return api.post("/post", data);
 };
